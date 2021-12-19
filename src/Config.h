@@ -26,6 +26,6 @@
 // Skip Calibration (for unfinished clock modules with no magnet)
 // #define SKIPCALIBRATION
 // Enable Debug messages for Serial
-// #define DEBUG
+#define DEBUG
 
 #endif

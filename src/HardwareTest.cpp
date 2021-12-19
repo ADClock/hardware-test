@@ -14,7 +14,7 @@ void HardwareTest::test_calibration() const
   Serial.println("HardwareTest >> Testing calibration...");
 #endif
   moma.calibrate();
-  delay(15000);
+  delay(2000);
 }
 
 /**

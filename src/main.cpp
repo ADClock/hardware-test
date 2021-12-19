@@ -12,9 +12,8 @@ MotorManager moma(motor1, motor2, calibration1, calibration2);
 
 HardwareTest test(moma, motor1, motor2, calibration1, calibration2);
 
-bool debug_active = false;
 #ifdef DEBUG
-debug_active = true;
+bool debug_active = true;
 // Wir steppen im Kreis und zählen wie viele Schritte es von Hall High bis Hall High ist.
 void rotateUntilTomorrow()
 {
@@ -35,7 +34,8 @@ void rotateUntilTomorrow()
     delay(4);
   }
 }
-
+#elif
+bool debug_active = false;
 #endif
 
 void setup()
@@ -53,8 +53,8 @@ void loop()
   Serial.println("main >> Looping...");
 #endif
   test.test_calibration();
+  test.test_magnet_field();
   test.test_single_rotation();
   test.test_short_animation();
-  test.test_magnet_field();
   delay(10000);
 }

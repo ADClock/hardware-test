@@ -18,10 +18,10 @@ public:
   void try_step();
   void reset();
   bool is_finished() const;
+  void all_pins_off();
 
 private:
   void write_step();
-  void all_pins_off();
 
   const uint8_t pin1;
   const uint8_t pin2;

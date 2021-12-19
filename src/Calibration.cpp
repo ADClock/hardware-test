@@ -44,9 +44,10 @@ bool Calibration::calibrate()
   return true;
 #endif
 
-  if (this->state == CALIBRATED)
+  if (this->state == CALIBRATED){
+    this->motor.all_pins_off();
     return true;
-
+  }
   bool in_field = is_in_field();
 
   switch (this->state)
